@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toastify-color-dark: #1a1a2e;
+  --toastify-color-success: #6a5acd;
+  --toastify-color-error: #ff6b6b;
+}
+
+body {
+  @apply bg-gray-900 text-white font-sans m-0 p-0 min-h-screen overflow-hidden;
+}
+
+.psychic-gradient {
+  @apply bg-gradient-to-r from-purple-900 via-violet-800 to-indigo-900;
+}
+
+.psychic-btn {
+  @apply bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md 
+  transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 
+  focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.psychic-btn-outline {
+  @apply border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-medium 
+  py-2 px-4 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 
+  focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.timer-display {
+  @apply font-mono text-lg font-semibold text-white px-3 py-1 rounded-md bg-gray-800/80;
+}
+
+.glass-panel {
+  @apply bg-gray-900/70 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-xl;
+}
+
+/* Chat styles */
+.chat-bubble {
+  @apply px-4 py-2 rounded-lg max-w-[80%] break-words;
+}
+
+.chat-bubble-sender {
+  @apply bg-purple-700 text-white self-end;
+}
+
+.chat-bubble-receiver {
+  @apply bg-gray-700 text-white self-start;
+}
+
+/* Video elements */
+.video-container {
+  @apply relative h-full w-full overflow-hidden rounded-lg bg-black;
+}
+
+.video-remote {
+  @apply absolute inset-0 h-full w-full object-cover;
+}
+
+.video-local {
+  @apply absolute bottom-4 right-4 h-28 w-40 rounded-lg border-2 border-purple-500 object-cover shadow-lg z-20;
+}
+
+/* Control buttons */
+.media-control-btn {
+  @apply flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white
+  hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors;
+}
+
+.media-control-btn.active {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+.end-call-btn {
+  @apply flex items-center justify-center w-16 h-16 rounded-full bg-red-600 text-white
+  hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
